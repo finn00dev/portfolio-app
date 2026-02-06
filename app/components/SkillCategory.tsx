@@ -24,7 +24,7 @@ export default function SkillCategory({ title, icon, skills }: SkillCategoryProp
           <div key={skill.name}>
             <div className="h-16.75 flex gap-4 justify-between items-center">
               <h5 className="font-sans text-[40px] sm:text-5xl xl:text-[56px]">{skill.name}</h5>
-              <p className="font-mono text-[8px] text-right sm:text-[12px] xl:text-sm">
+              <p className="font-mono max-w-[200px] text-[8px] text-right sm:text-[12px] xl:text-sm">
                 {skill.description}
               </p>
             </div>

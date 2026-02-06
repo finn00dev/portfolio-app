@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface ProjectLink {
   key: string;
@@ -21,8 +22,16 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="flex flex-col gap-4.5 border-[0.5px] p-3.75 sm:w-63">
-      <img src={project.imagePath} alt={project.title} className="w-full opacity-70" />
+    <motion.div 
+      className="flex flex-col gap-4.5 border-[0.5px] p-3.75 sm:w-63 group hover:shadow-[inset_0_0_0_1px_currentColor] transition-all duration-200"
+      whileHover={{ scale: 1.02, backgroundColor: "rgba(var(--foreground-rgb), 0.04)" }}
+      transition={{ duration: 0.2, ease: "easeOut" }}
+    >
+      <img 
+        src={project.imagePath} 
+        alt={project.title} 
+        className="w-full opacity-65 transition-opacity duration-200 group-hover:opacity-90"
+      />
       <div className="flex flex-row justify-between">
           <h4 className="font-mono font-bold text-md">{project.title.toUpperCase()}</h4>
           <span className="font-mono text-md">{project.year}</span>
@@ -44,6 +53,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           ))}
         </div>
       )}
-    </div>
+    </motion.div>
   );
 }

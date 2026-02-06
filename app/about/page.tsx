@@ -1,6 +1,7 @@
 import KeyValueList from "../components/KeyValueList";
 import Links from "../components/Links";
 import SectionHeader from "../components/SectionHeader";
+import PageTransition from "../components/PageTransition";
 
 export default function About() {
 
@@ -14,6 +15,7 @@ export default function About() {
   ];
   
   return (
+    <PageTransition>
     <div className="flex flex-col pb-5 gap-3.5 sm:gap-5">
       <SectionHeader title="About" />
       <div className="flex flex-col items-center lg:flex-row lg:gap-7.5 lg:justify-center lg:items-start xl:gap-10">
@@ -35,5 +37,6 @@ export default function About() {
         </div>
       </div>
     </div>
+    </PageTransition>
   );
 }

@@ -1,6 +1,7 @@
 import SectionHeader from "../components/SectionHeader";
 import SubSectionHeader from "../components/SubSectionHeader";
 import ProjectCard from "../components/ProjectCard";
+import PageTransition from "../components/PageTransition";
 
 export default function Projects() {
   
@@ -58,6 +59,7 @@ export default function Projects() {
   ];
 
   return (
+    <PageTransition>
     <div className="flex flex-col pb-5 gap-5 lg:gap-9">
       <SectionHeader title="Projects" />
       <div className="flex flex-col items-center gap-8 lg:px-5 lg:items-start lg:flex-row lg:gap-10">
@@ -84,5 +86,6 @@ export default function Projects() {
         </div>
       </div>
     </div>
+    </PageTransition>
   );
 }

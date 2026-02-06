@@ -1,8 +1,10 @@
 import SectionHeader from "../components/SectionHeader";
 import SkillCategory from "../components/SkillCategory";
+import PageTransition from "../components/PageTransition";
 
 export default function Skills() {
   return (
+    <PageTransition>
     <div className="flex flex-col pb-5 gap-5 lg:gap-9">
       <SectionHeader title="Skills" />
       <div className="flex flex-col items-center gap-7.5 lg:px-5 lg:items-start">
@@ -19,12 +21,11 @@ export default function Skills() {
             title="Frontend" 
             icon="fe.svg"
             skills={[
-              { name: "Angular", description: "Component-based framework" },
-              { name: "Next.js", description: "React framework with SSR" },
-              { name: "Tailwind", description: "Utility-first CSS framework" },
-              { name: "Jest", description: "JavaScript testing framework" },
-              { name: "TypeScript", description: "Typed JavaScript" },
-              { name: "SCSS/CSS", description: "Styling and animations" }
+              { name: "Angular", description: "My go-to framework for enterprise apps, used daily at work" },
+              { name: "Next.js", description: "Built this portfolio with it and appreciate it's integration with Vercel" },
+              { name: "Tailwind", description: "Rapid styling without context-switching to CSS files" },
+              { name: "Jest", description: "Unit and integration testing for reliable code" },
+              { name: "SCSS/CSS", description: "Custom animations and pixel-perfect layouts" }
             ]} 
           />
           <div className="hidden lg:block">
@@ -34,11 +35,11 @@ export default function Skills() {
             title="Design" 
             icon="design.svg"
             skills={[
-              { name: "Figma", description: "Collaborative design tool" },
-              { name: "Wireframing", description: "Low-fidelity layouts" },
-              { name: "Prototyping", description: "Interactive mockups" },
-              { name: "WCAG", description: "Accessibility guidelines" },
-              { name: "Typography", description: "Text design systems" },
+              { name: "Figma", description: "Where I bridge design and dev collaboration" },
+              { name: "Wireframing", description: "Quick sketches to validate ideas early" },
+              { name: "Prototyping", description: "Interactive flows to test UX before building" },
+              { name: "WCAG", description: "Ensuring products work for everyone" },
+              { name: "Typography", description: "Crafting readable, beautiful type hierarchies" },
             ]} 
           />
           <div className="hidden lg:block">
@@ -48,15 +49,16 @@ export default function Skills() {
             title="Tools" 
             icon="tools.svg"
             skills={[
-              { name: "Windsurf", description: "AI-powered IDE" },
-              { name: "Github", description: "Version control platform" },
-              { name: "Jira", description: "Project management" },
-              { name: "Firebase", description: "Backend-as-a-service" },
-              { name: "CI/CD", description: "Automated deployment" },
+              { name: "Windsurf", description: "AI pair programming for faster iteration" },
+              { name: "Github", description: "PRs, code reviews, and open source contributions" },
+              { name: "Jira", description: "Sprint planning and ticket management" },
+              { name: "Firebase", description: "Quick backends for side projects" },
+              { name: "CI/CD", description: "Automated pipelines for confident deploys" },
             ]} 
           />
         </div>
       </div>
     </div>
+    </PageTransition>
   );
 }
