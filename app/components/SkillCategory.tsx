@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+import { motion } from "framer-motion";
 import SubSectionHeader from "./SubSectionHeader";
 
 interface Skill {
@@ -14,10 +16,16 @@ interface SkillCategoryProps {
 }
 
 export default function SkillCategory({ title, icon, skills }: SkillCategoryProps) {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <div className="flex flex-col gap-3.5 lg:flex-row lg:gap-10">
+    <motion.div 
+      className="flex flex-col gap-3.5 lg:flex-row lg:gap-10"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div className="lg:w-76.25">
-        <SubSectionHeader title={title} icon={icon} />
+        <SubSectionHeader title={title} icon={icon} isActive={isHovered} />
       </div>
       <div className="flex flex-col px-2.5 gap-2 lg:grow lg:grid lg:grid-cols-2 lg:gap-7 lg:px-0">
         {skills.map((skill, index) => (
@@ -34,6 +42,6 @@ export default function SkillCategory({ title, icon, skills }: SkillCategoryProp
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }

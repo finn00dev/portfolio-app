@@ -1,9 +1,15 @@
+"use client";
+
+import { useState } from "react";
+import { motion } from "framer-motion";
 import SectionHeader from "../components/SectionHeader";
 import SubSectionHeader from "../components/SubSectionHeader";
 import ProjectCard from "../components/ProjectCard";
 import PageTransition from "../components/PageTransition";
 
 export default function Projects() {
+  const [sideProjectsHovered, setSideProjectsHovered] = useState(false);
+  const [schoolProjectsHovered, setSchoolProjectsHovered] = useState(false);
   
   const sideProjects = [
     {
@@ -62,29 +68,37 @@ export default function Projects() {
     <PageTransition>
     <div className="flex flex-col pb-5 gap-5 lg:gap-9">
       <SectionHeader title="Projects" />
-      <div className="flex flex-col items-center gap-8 lg:px-5 lg:items-start lg:flex-row lg:gap-10">
+      <motion.div 
+        className="flex flex-col items-center gap-8 lg:px-5 lg:items-start lg:flex-row lg:gap-10"
+        onMouseEnter={() => setSideProjectsHovered(true)}
+        onMouseLeave={() => setSideProjectsHovered(false)}
+      >
         <div className="w-full max-w-131.25 lg:max-w-none lg:w-76.25">
-          <SubSectionHeader title="Side Projects"/>
+          <SubSectionHeader title="Side Projects" isActive={sideProjectsHovered}/>
         </div>
         <div className="w-full max-w-131.25 flex flex-col gap-5 sm:flex-row sm:flex-wrap lg:max-w-none lg:w-auto">
           {sideProjects.map((project) => (
             <ProjectCard key={project.title} project={project}/>
           ))}
         </div>
-      </div>
+      </motion.div>
       <div className="hidden lg:block">
         <div className="h-[0.5px] bg-current"></div>
       </div>
-      <div className="flex flex-col items-center gap-8 lg:px-5 lg:items-start lg:flex-row lg:gap-10">
+      <motion.div 
+        className="flex flex-col items-center gap-8 lg:px-5 lg:items-start lg:flex-row lg:gap-10"
+        onMouseEnter={() => setSchoolProjectsHovered(true)}
+        onMouseLeave={() => setSchoolProjectsHovered(false)}
+      >
         <div className="w-full max-w-131.25 lg:max-w-none lg:w-76.25">
-          <SubSectionHeader title="School Projects"/>
+          <SubSectionHeader title="School Projects" isActive={schoolProjectsHovered}/>
         </div>
         <div className="w-full max-w-131.25 flex flex-col gap-5 sm:flex-row sm:flex-wrap lg:max-w-none lg:w-auto">
           {schoolProjects.map((project) => (
             <ProjectCard key={project.title} project={project} />
           ))}
         </div>
-      </div>
+      </motion.div>
     </div>
     </PageTransition>
   );
