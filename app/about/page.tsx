@@ -16,9 +16,9 @@ export default function About() {
   
   return (
     <PageTransition>
-    <div className="flex flex-col pb-5 gap-3.5 sm:gap-5 h-[calc(100dvh-58px)] sm:h-[calc(100dvh-80px)] lg:overflow-hidden">
+    <div className="flex flex-col pb-5 gap-3.5 sm:gap-5 lg:h-[calc(100dvh-80px)] lg:overflow-hidden">
       <SectionHeader title="About" />
-      <div className="flex flex-col items-center lg:flex-row lg:gap-7.5 lg:justify-center lg:items-start xl:gap-10 lg:flex-1 lg:min-h-0">
+      <div className="flex flex-col items-center mb- lg:flex-row lg:gap-7.5 lg:justify-center lg:items-start xl:gap-10 lg:flex-1 lg:min-h-0">
         <div className="max-w-135 flex flex-col w-full gap-4.5 md:max-w-152.5 md:gap-3.75 lg:w-110 lg:h-full xl:w-137.5 xl:gap-5">
           <img src="/about/about.jpg"  alt="Finn" className="object-cover w-full lg:flex-1 lg:min-h-0 lg:max-h-87.5" />
           
