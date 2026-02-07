@@ -8,7 +8,7 @@ export default function Links() {
       <img src="/links/links.png" alt="Links" className="w-40 sm:w-32 lg:w-46"/>
       <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-5 lg:flex-col">
         <Button label="resume" href="/Resume_Ferguson.pdf" />
-        <Button label="linkedin" href="https://linkedin.com/in/finn.ferguson" />
+        <Button label="linkedin" href="www.linkedin.com/in/finn-ferguson" />
         <Button label="github" href="https://github.com/finn00dev" />
       </div>
     </div>
